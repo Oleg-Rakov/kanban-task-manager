@@ -1,17 +1,16 @@
-// eslint.config.js
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import tsParser from '@typescript-eslint/parser'; // ← ВАЖНО: импортируем модуль
+import tsParser from '@typescript-eslint/parser';
 
 export default [
   js.configs.recommended,
-  ...tseslint.configs.recommended, // пресеты для TS
+  ...tseslint.configs.recommended,
   {
     files: ['src/**/*.{ts,tsx}'],
     languageOptions: {
-      parser: tsParser, // ← сюда передаём сам модуль, а не строку
+      parser: tsParser,
       parserOptions: {
         ecmaVersion: 2020,
         sourceType: 'module',
